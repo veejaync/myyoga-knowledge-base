@@ -1,19 +1,680 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Yoga Journey</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef">
+  <meta name="description" content="Explore gentle, grounding yoga practices for strength, balance, and a little more calm in your day.">
+  <title>Serenity Yoga — Make space for yourself</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f7f5ef;
+      --ink: #24352e;
+      --muted: #6f7971;
+      --green: #355b4b;
+      --green-dark: #29473a;
+      --sage: #e7ece3;
+      --clay: #d98f70;
+      --line: rgba(36, 53, 46, .12);
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      min-height: 82px;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--green-dark);
+      font-size: .83rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 30px;
+      height: 30px;
+      place-items: center;
+      border: 1px solid #bdc9b9;
+      border-radius: 50%;
+      color: var(--green);
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 500;
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .site-nav a {
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+
+    .site-nav a:hover,
+    .site-nav a:focus-visible {
+      color: var(--green);
+    }
+
+    .site-nav .nav-cta {
+      padding: 11px 18px;
+      border: 1px solid #bdc9b9;
+      border-radius: 99px;
+      color: var(--green-dark);
+    }
+
+    .hero {
+      display: grid;
+      min-height: 590px;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 50px;
+      padding-block: 58px 76px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--green);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 22px;
+      height: 1px;
+      background: var(--clay);
+      content: "";
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    .hero h1 {
+      max-width: 520px;
+      margin: 22px 0 20px;
+      font-family: var(--serif);
+      font-size: clamp(3.3rem, 6vw, 5.2rem);
+      font-weight: 500;
+      letter-spacing: -.055em;
+      line-height: 1.03;
+    }
+
+    .hero h1 em {
+      color: var(--green);
+      font-weight: 500;
+    }
+
+    .hero-copy {
+      max-width: 415px;
+      margin-bottom: 30px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 50px;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      padding: 0 21px;
+      border-radius: 99px;
+      background: var(--green);
+      color: white;
+      font-size: .9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+      background: var(--green-dark);
+    }
+
+    .button span {
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 455px;
+      isolation: isolate;
+    }
+
+    .hero-photo {
+      position: absolute;
+      inset: 0 12px 0 25px;
+      overflow: hidden;
+      border-radius: 48% 48% 8px 8px;
+      background: #d3ddd0;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .photo-wash {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 53%, rgba(32, 53, 43, .48));
+    }
+
+    .photo-note {
+      position: absolute;
+      right: 0;
+      bottom: 26px;
+      left: 52px;
+      color: white;
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-style: italic;
+    }
+
+    .sun-disc {
+      position: absolute;
+      z-index: -1;
+      top: 4px;
+      right: -9px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #e9c29f;
+      opacity: .7;
+    }
+
+    .hero-stamp {
+      position: absolute;
+      bottom: 34px;
+      left: -5px;
+      display: grid;
+      width: 96px;
+      height: 96px;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, .7);
+      border-radius: 50%;
+      background: var(--paper);
+      color: var(--green);
+      font-family: var(--serif);
+      font-size: .86rem;
+      line-height: 1.45;
+      text-align: center;
+      transform: rotate(-9deg);
+    }
+
+    .practices {
+      padding-block: 78px 92px;
+      background: var(--sage);
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 34px;
+    }
+
+    .section-heading h2,
+    .about h2 {
+      margin: 12px 0 0;
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 500;
+      letter-spacing: -.04em;
+      line-height: 1.13;
+    }
+
+    .section-heading > p {
+      max-width: 290px;
+      margin-bottom: 3px;
+      color: var(--muted);
+      font-size: .94rem;
+      line-height: 1.7;
+    }
+
+    .practice-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .practice-card {
+      overflow: hidden;
+      border: 1px solid rgba(36, 53, 46, .08);
+      border-radius: 8px;
+      background: var(--paper);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .practice-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 34px rgba(36, 53, 46, .09);
+    }
+
+    .practice-image {
+      height: 210px;
+      overflow: hidden;
+      background: #d8ded2;
+    }
+
+    .practice-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s ease;
+    }
+
+    .practice-card:hover .practice-image img {
+      transform: scale(1.04);
+    }
+
+    .practice-text {
+      padding: 22px 22px 24px;
+    }
+
+    .practice-text h3 {
+      margin-bottom: 8px;
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      font-weight: 500;
+    }
+
+    .practice-text p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.65;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: .9fr 1fr;
+      align-items: center;
+      gap: 100px;
+      padding-block: 100px;
+    }
+
+    .about h2 {
+      max-width: 400px;
+      margin-bottom: 18px;
+    }
+
+    .about-copy {
+      max-width: 440px;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: .98rem;
+      line-height: 1.85;
+    }
+
+    .about-note {
+      position: relative;
+      padding: 28px 30px 28px 34px;
+      border-left: 2px solid var(--clay);
+      color: var(--green-dark);
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      line-height: 1.55;
+    }
+
+    .about-note span {
+      display: block;
+      margin-top: 14px;
+      color: var(--muted);
+      font-family: var(--sans);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .closing {
+      padding: 58px 24px 62px;
+      background: var(--green-dark);
+      color: white;
+      text-align: center;
+    }
+
+    .closing .eyebrow {
+      color: #d3dfd1;
+    }
+
+    .closing h2 {
+      margin: 13px 0 24px;
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 500;
+      letter-spacing: -.03em;
+    }
+
+    .closing .button {
+      border: 1px solid rgba(255, 255, 255, .42);
+      background: transparent;
+    }
+
+    .closing .button:hover,
+    .closing .button:focus-visible {
+      background: rgba(255, 255, 255, .1);
+    }
+
+    .site-footer {
+      display: flex;
+      min-height: 80px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      color: var(--muted);
+      font-size: .78rem;
+    }
+
+    .site-footer p {
+      margin: 0;
+    }
+
+    .footer-link {
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    :focus-visible {
+      outline: 3px solid #c97d5d;
+      outline-offset: 4px;
+    }
+
+    @media (max-width: 760px) {
+      .wrap {
+        width: min(100% - 36px, 560px);
+      }
+
+      .site-header {
+        min-height: 72px;
+      }
+
+      .site-nav {
+        gap: 17px;
+        font-size: .82rem;
+      }
+
+      .site-nav .nav-cta {
+        padding: 9px 13px;
+      }
+
+      .hero {
+        min-height: 0;
+        grid-template-columns: 1fr;
+        gap: 34px;
+        padding-block: 60px 66px;
+      }
+
+      .hero h1 {
+        max-width: 500px;
+        font-size: clamp(3.3rem, 12vw, 4.6rem);
+      }
+
+      .hero-visual {
+        min-height: min(112vw, 480px);
+      }
+
+      .hero-photo {
+        inset-inline: 20px;
+      }
+
+      .sun-disc {
+        right: 0;
+        width: 94px;
+        height: 94px;
+      }
+
+      .practices {
+        padding-block: 64px;
+      }
+
+      .section-heading {
+        display: block;
+      }
+
+      .section-heading > p {
+        margin-top: 14px;
+      }
+
+      .practice-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .practice-card {
+        display: grid;
+        grid-template-columns: minmax(110px, .75fr) 1fr;
+      }
+
+      .practice-image {
+        height: 100%;
+        min-height: 150px;
+      }
+
+      .practice-text {
+        align-self: center;
+        padding: 18px;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding-block: 72px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .brand {
+        gap: 7px;
+        font-size: .72rem;
+        letter-spacing: .1em;
+      }
+
+      .site-nav {
+        gap: 12px;
+        font-size: .76rem;
+      }
+
+      .site-nav a:first-child {
+        display: none;
+      }
+
+      .site-nav .nav-cta {
+        padding: 8px 11px;
+      }
+
+      .practice-card {
+        grid-template-columns: 112px 1fr;
+      }
+
+      .practice-text {
+        padding: 15px;
+      }
+
+      .practice-text h3 {
+        font-size: 1.25rem;
+      }
+
+      .practice-text p {
+        font-size: .82rem;
+      }
+
+      .site-footer {
+        min-height: 76px;
+        font-size: .7rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>My Yoga Knowledge Base</h1>
+  <header class="site-header wrap">
+    <a class="brand" href="#" aria-label="Serenity Yoga home">
+      <span class="brand-mark" aria-hidden="true">s</span>
+      <span>SERENITY YOGA</span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="#about">Our approach</a>
+      <a href="#practice">Practices</a>
+      <a class="nav-cta" href="#begin">Take a breath <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
 
-    <h2>Welcome</h2>
-    <p>This site contains my yoga learning journey.</p>
+  <main>
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div>
+        <span class="eyebrow">A softer kind of strength</span>
+        <h1 id="hero-title">Make space<br>for <em>yourself.</em></h1>
+        <p class="hero-copy">Come as you are. Find a little more room to breathe, move, and feel at home in your body.</p>
+        <a class="button" href="#practice">Explore the practices <span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="hero-visual" aria-label="A quiet moment for mindful movement">
+        <span class="sun-disc" aria-hidden="true"></span>
+        <div class="hero-photo">
+          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&amp;fit=crop&amp;w=1100&amp;q=85" alt="A person meditating in a quiet mountain landscape">
+          <span class="photo-wash" aria-hidden="true"></span>
+          <span class="photo-note">Breathe in. Begin again.</span>
+        </div>
+        <span class="hero-stamp" aria-hidden="true">slow down<br>and listen</span>
+      </div>
+    </section>
 
-    <ul>
-        <li><a href="poses.html">Yoga Poses</a></li>
-        <li><a href="journal.html">Practice Journal</a></li>
-        <li><a href="roadmap.html">Learning Roadmap</a></li>
-    </ul>
+    <section class="practices" id="practice" aria-labelledby="practice-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Find your flow</span>
+            <h2 id="practice-title">A practice for<br>where you are.</h2>
+          </div>
+          <p>There is no perfect way to begin. Choose the pace that feels right today.</p>
+        </div>
+        <div class="practice-grid">
+          <article class="practice-card">
+            <div class="practice-image">
+              <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="A person moving through a yoga flow" loading="lazy">
+            </div>
+            <div class="practice-text">
+              <h3>Vinyasa Flow</h3>
+              <p>Link movement and breath in an energizing, flowing practice.</p>
+            </div>
+          </article>
+          <article class="practice-card">
+            <div class="practice-image">
+              <img src="https://images.unsplash.com/photo-1599447421416-3414500d18a5?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="A calm, grounded yoga practice" loading="lazy">
+            </div>
+            <div class="practice-text">
+              <h3>Hatha Yoga</h3>
+              <p>Build a steady foundation with thoughtful, accessible poses.</p>
+            </div>
+          </article>
+          <article class="practice-card">
+            <div class="practice-image">
+              <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="A peaceful moment of stillness" loading="lazy">
+            </div>
+            <div class="practice-text">
+              <h3>Yin &amp; Stillness</h3>
+              <p>Slow down, soften, and make space for a quieter kind of focus.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
+    <section class="about wrap" id="about" aria-labelledby="about-title">
+      <div>
+        <span class="eyebrow">A little more ease</span>
+        <h2 id="about-title">Your time.<br>Your own rhythm.</h2>
+        <p class="about-copy">Yoga is not about touching your toes. It is about meeting yourself where you are, one breath at a time. Start gently, stay curious, and let your practice grow with you.</p>
+      </div>
+      <blockquote class="about-note">
+        “The quieter you become, the more you can hear.”
+        <span>A gentle reminder</span>
+      </blockquote>
+    </section>
+
+    <section class="closing" id="begin" aria-labelledby="closing-title">
+      <span class="eyebrow">Your mat is waiting</span>
+      <h2 id="closing-title">A moment for you starts here.</h2>
+      <a class="button" href="#practice">Find your practice <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+
+  <footer class="site-footer wrap">
+    <a class="brand" href="#" aria-label="Serenity Yoga home">
+      <span class="brand-mark" aria-hidden="true">s</span>
+      <span>SERENITY YOGA</span>
+    </a>
+    <p>Move gently. Breathe deeply.</p>
+    <a class="footer-link" href="#practice">Back to practices ↑</a>
+  </footer>
 </body>
 </html>
