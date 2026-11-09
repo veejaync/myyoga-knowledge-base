@@ -3,25 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f5ef">
+  <meta name="theme-color" content="#f6f5eb">
   <meta name="description" content="Explore gentle, grounding yoga practices for strength, balance, and a little more calm in your day.">
   <title>Serenity Yoga — Make space for yourself</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
   <style>
     :root {
       color-scheme: light;
-      --paper: #f7f5ef;
-      --ink: #24352e;
-      --muted: #6f7971;
-      --green: #355b4b;
-      --green-dark: #29473a;
-      --sage: #e7ece3;
-      --clay: #d98f70;
-      --line: rgba(36, 53, 46, .12);
-      --serif: "Playfair Display", Georgia, serif;
-      --sans: "DM Sans", sans-serif;
+      --paper: #f6f5eb;
+      --ink: #343b2b;
+      --muted: #717765;
+      --green: #6c794b;
+      --green-dark: #485638;
+      --sage: #e8ebdc;
+      --clay: #9aa47b;
+      --line: rgba(52, 59, 43, .14);
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --serif: var(--sans);
     }
 
     * {
@@ -30,6 +27,7 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 88px;
     }
 
     body {
@@ -50,13 +48,18 @@
     }
 
     .site-header {
-      position: relative;
-      z-index: 1;
+      position: sticky;
+      z-index: 10;
+      top: 0;
       display: flex;
-      min-height: 82px;
+      width: 100%;
+      min-height: 72px;
       align-items: center;
       justify-content: space-between;
+      padding-inline: max(24px, calc((100% - 1120px) / 2));
       border-bottom: 1px solid var(--line);
+      background: rgba(247, 245, 239, .88);
+      backdrop-filter: blur(18px);
     }
 
     .brand {
@@ -75,12 +78,15 @@
       width: 30px;
       height: 30px;
       place-items: center;
-      border: 1px solid #bdc9b9;
+      border: 1px solid #c5cbb4;
       border-radius: 50%;
       color: var(--green);
-      font-family: var(--serif);
-      font-size: 1.15rem;
-      font-weight: 500;
+    }
+
+    .brand-mark svg {
+      width: 17px;
+      height: 17px;
+      fill: currentColor;
     }
 
     .site-nav {
@@ -103,7 +109,7 @@
 
     .site-nav .nav-cta {
       padding: 11px 18px;
-      border: 1px solid #bdc9b9;
+      border: 1px solid #c5cbb4;
       border-radius: 99px;
       color: var(--green-dark);
     }
@@ -129,10 +135,12 @@
     }
 
     .eyebrow::before {
-      width: 22px;
-      height: 1px;
+      width: 12px;
+      height: 7px;
+      border-radius: 100% 0 100% 0;
       background: var(--clay);
       content: "";
+      transform: rotate(-15deg);
     }
 
     h1,
@@ -146,15 +154,16 @@
       max-width: 520px;
       margin: 22px 0 20px;
       font-family: var(--serif);
-      font-size: clamp(3.3rem, 6vw, 5.2rem);
-      font-weight: 500;
-      letter-spacing: -.055em;
-      line-height: 1.03;
+      font-size: clamp(3.4rem, 7vw, 6rem);
+      font-weight: 600;
+      letter-spacing: -.075em;
+      line-height: .98;
     }
 
     .hero h1 em {
       color: var(--green);
-      font-weight: 500;
+      font-style: normal;
+      font-weight: 600;
     }
 
     .hero-copy {
@@ -174,7 +183,7 @@
       padding: 0 21px;
       border-radius: 99px;
       background: var(--green);
-      color: white;
+      color: #fffef7;
       font-size: .9rem;
       font-weight: 600;
       text-decoration: none;
@@ -202,11 +211,12 @@
       position: absolute;
       inset: 0 12px 0 25px;
       overflow: hidden;
-      border-radius: 48% 48% 8px 8px;
-      background: #d3ddd0;
+      border-radius: 24px;
+      background: #e8ebdc;
     }
 
     .hero-photo img {
+      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -216,7 +226,7 @@
     .photo-wash {
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, transparent 53%, rgba(32, 53, 43, .48));
+      background: linear-gradient(180deg, transparent 56%, rgba(52, 64, 39, .46));
     }
 
     .photo-note {
@@ -230,40 +240,35 @@
       font-style: italic;
     }
 
-    .sun-disc {
-      position: absolute;
-      z-index: -1;
-      top: 4px;
-      right: -9px;
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      background: #e9c29f;
-      opacity: .7;
-    }
-
-    .hero-stamp {
-      position: absolute;
-      bottom: 34px;
-      left: -5px;
-      display: grid;
-      width: 96px;
-      height: 96px;
-      place-items: center;
-      border: 1px solid rgba(255, 255, 255, .7);
-      border-radius: 50%;
-      background: var(--paper);
-      color: var(--green);
-      font-family: var(--serif);
-      font-size: .86rem;
-      line-height: 1.45;
-      text-align: center;
-      transform: rotate(-9deg);
-    }
-
     .practices {
       padding-block: 78px 92px;
       background: var(--sage);
+      scroll-margin-top: 24px;
+    }
+
+    .practices .section-heading,
+    .practices .practice-card {
+      transition: opacity .65s ease, transform .65s cubic-bezier(.2, .7, .2, 1), box-shadow .25s ease;
+    }
+
+    .js .practices:not(.is-visible) .section-heading,
+    .js .practices:not(.is-visible) .practice-card {
+      opacity: 0;
+      transform: translateY(22px);
+    }
+
+    .practices.is-visible .section-heading,
+    .practices.is-visible .practice-card {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .practices.is-visible .practice-card:nth-child(2) {
+      transition-delay: .08s;
+    }
+
+    .practices.is-visible .practice-card:nth-child(3) {
+      transition-delay: .16s;
     }
 
     .section-heading {
@@ -279,9 +284,9 @@
       margin: 12px 0 0;
       font-family: var(--serif);
       font-size: clamp(2.2rem, 4vw, 3.2rem);
-      font-weight: 500;
-      letter-spacing: -.04em;
-      line-height: 1.13;
+      font-weight: 600;
+      letter-spacing: -.055em;
+      line-height: 1.08;
     }
 
     .section-heading > p {
@@ -300,7 +305,7 @@
 
     .practice-card {
       overflow: hidden;
-      border: 1px solid rgba(36, 53, 46, .08);
+      border: 1px solid rgba(52, 59, 43, .1);
       border-radius: 8px;
       background: var(--paper);
       transition: transform .25s ease, box-shadow .25s ease;
@@ -308,24 +313,260 @@
 
     .practice-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 14px 34px rgba(36, 53, 46, .09);
+      box-shadow: 0 14px 34px rgba(52, 59, 43, .1);
     }
 
     .practice-image {
-      height: 210px;
+      position: relative;
+      height: 250px;
       overflow: hidden;
-      background: #d8ded2;
+      background: #e3e7d8;
     }
 
-    .practice-image img {
+    .practice-select {
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .practice-select img {
+      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform .4s ease;
+      transition: transform .4s ease, opacity .4s ease;
     }
 
-    .practice-card:hover .practice-image img {
+    .practice-card:hover .practice-select img,
+    .practice-select:focus-visible img {
       transform: scale(1.04);
+    }
+
+    .practice-select::after {
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+      display: inline-flex;
+      height: 36px;
+      align-items: center;
+      padding-inline: 14px;
+      border-radius: 99px;
+      background: rgba(246, 245, 235, .96);
+      color: var(--green-dark);
+      content: "Explore  ↗";
+      font-size: .78rem;
+      font-weight: 600;
+      opacity: .94;
+      transition: opacity .2s ease, transform .2s ease;
+    }
+
+    .practice-card:hover .practice-select::after,
+    .practice-select:focus-visible::after {
+      opacity: 1;
+    }
+
+    .practice-reader[hidden] {
+      display: none;
+    }
+
+    .practice-reader {
+      height: min(68vh, 480px);
+      min-height: 360px;
+      overflow: auto;
+      border: 1px solid rgba(52, 59, 43, .14);
+      border-radius: 12px;
+      background: var(--paper);
+      box-shadow: 0 20px 55px rgba(52, 59, 43, .08);
+      scroll-margin-top: 20px;
+      scrollbar-color: #aeb995 transparent;
+      scrollbar-width: thin;
+    }
+
+    .reader-header {
+      position: sticky;
+      z-index: 1;
+      top: 0;
+      display: flex;
+      min-height: 88px;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 22px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(246, 245, 235, .96);
+      backdrop-filter: blur(16px);
+    }
+
+    .reader-progress {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      overflow: hidden;
+      background: var(--sage);
+    }
+
+    .reader-progress span {
+      display: block;
+      width: 0;
+      height: 100%;
+      background: var(--green);
+      transition: width .45s cubic-bezier(.2, .7, .2, 1);
+    }
+
+    .reader-thumb {
+      width: 76px;
+      height: 58px;
+      flex: 0 0 auto;
+      overflow: hidden;
+      border-radius: 8px;
+      background: var(--sage);
+      object-fit: cover;
+      transition: opacity .3s ease, transform .3s ease;
+    }
+
+    .reader-thumb.is-changing {
+      animation: thumbnail-arrive .45s cubic-bezier(.2, .7, .2, 1) both;
+    }
+
+    .reader-heading {
+      min-width: 0;
+      flex: 1;
+    }
+
+    .reader-heading p {
+      margin: 0 0 4px;
+      color: var(--muted);
+      font-size: .73rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .reader-heading h3 {
+      overflow: hidden;
+      margin: 0;
+      font-size: 1.08rem;
+      font-weight: 600;
+      letter-spacing: -.035em;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .reader-close,
+    .reader-nav-button {
+      display: inline-flex;
+      min-height: 42px;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 15px;
+      border: 1px solid #c5cbb4;
+      border-radius: 99px;
+      background: transparent;
+      color: var(--green-dark);
+      cursor: pointer;
+      font: inherit;
+      font-size: .84rem;
+      font-weight: 600;
+      transition: background .2s ease, border-color .2s ease, color .2s ease;
+    }
+
+    .reader-close:hover,
+    .reader-nav-button:hover:not(:disabled) {
+      border-color: var(--green);
+      background: var(--green);
+      color: white;
+    }
+
+    .reader-content {
+      max-width: 720px;
+      min-height: 400px;
+      margin-inline: auto;
+      padding: clamp(32px, 6vw, 72px);
+    }
+
+    .reader-content.is-changing {
+      animation: reader-enter .45s ease both;
+    }
+
+    .reader-content h3 {
+      margin: 14px 0 18px;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 600;
+      letter-spacing: -.07em;
+      line-height: 1;
+    }
+
+    .reader-description {
+      max-width: 560px;
+      margin-bottom: 30px;
+      color: var(--muted);
+      font-size: 1.12rem;
+      line-height: 1.8;
+    }
+
+    .reader-note {
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      color: var(--green-dark);
+      font-size: .92rem;
+      line-height: 1.75;
+    }
+
+    .reader-note strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .reader-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 38px;
+    }
+
+    .reader-nav-button:disabled {
+      cursor: not-allowed;
+      opacity: .42;
+    }
+
+    .reader-nav-button.next {
+      border-color: var(--green);
+      background: var(--green);
+      color: white;
+    }
+
+    .reader-nav-button.next:hover {
+      background: var(--green-dark);
+    }
+
+    @keyframes reader-enter {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes thumbnail-arrive {
+      from {
+        opacity: .35;
+        transform: scale(1.45);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
 
     .practice-text {
@@ -336,7 +577,8 @@
       margin-bottom: 8px;
       font-family: var(--serif);
       font-size: 1.45rem;
-      font-weight: 500;
+      font-weight: 600;
+      letter-spacing: -.04em;
     }
 
     .practice-text p {
@@ -374,6 +616,7 @@
       color: var(--green-dark);
       font-family: var(--serif);
       font-size: 1.35rem;
+      font-weight: 500;
       line-height: 1.55;
     }
 
@@ -403,8 +646,8 @@
       margin: 13px 0 24px;
       font-family: var(--serif);
       font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 500;
-      letter-spacing: -.03em;
+      font-weight: 600;
+      letter-spacing: -.05em;
     }
 
     .closing .button {
@@ -437,7 +680,7 @@
     }
 
     :focus-visible {
-      outline: 3px solid #c97d5d;
+      outline: 3px solid #889466;
       outline-offset: 4px;
     }
 
@@ -447,7 +690,10 @@
       }
 
       .site-header {
+        width: 100%;
         min-height: 72px;
+        margin-inline: 0;
+        padding-inline: 18px;
       }
 
       .site-nav {
@@ -479,12 +725,6 @@
         inset-inline: 20px;
       }
 
-      .sun-disc {
-        right: 0;
-        width: 94px;
-        height: 94px;
-      }
-
       .practices {
         padding-block: 64px;
       }
@@ -510,6 +750,26 @@
       .practice-image {
         height: 100%;
         min-height: 150px;
+      }
+
+      .reader-header {
+        gap: 11px;
+        padding-inline: 12px;
+      }
+
+      .reader-thumb {
+        width: 58px;
+        height: 50px;
+      }
+
+      .reader-close {
+        min-height: 38px;
+        padding-inline: 11px;
+        font-size: .76rem;
+      }
+
+      .reader-content {
+        min-height: 350px;
       }
 
       .practice-text {
@@ -560,6 +820,29 @@
         font-size: .82rem;
       }
 
+      .practice-reader {
+        height: min(62vh, 450px);
+        min-height: 350px;
+      }
+
+      .reader-heading h3 {
+        font-size: .95rem;
+      }
+
+      .reader-heading p {
+        font-size: .64rem;
+      }
+
+      .reader-controls {
+        gap: 8px;
+      }
+
+      .reader-nav-button {
+        min-height: 40px;
+        padding-inline: 11px;
+        font-size: .76rem;
+      }
+
       .site-footer {
         min-height: 76px;
         font-size: .7rem;
@@ -574,12 +857,27 @@
         transition-duration: .01ms !important;
       }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reader-content {
+        animation: none;
+      }
+
+      .reader-thumb {
+        animation: none !important;
+      }
+    }
   </style>
+  <script>
+    document.documentElement.classList.add("js");
+  </script>
 </head>
 <body>
   <header class="site-header wrap">
     <a class="brand" href="#" aria-label="Serenity Yoga home">
-      <span class="brand-mark" aria-hidden="true">s</span>
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M19.8 3.2C11.3 3.5 5.2 6.2 4.1 11.6c-.6 2.8 1.3 5.1 4 5.1 5.2 0 9.9-6.1 11.7-13.5ZM4.3 20.8c1.9-6.2 5.6-10.1 11.5-13.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.7"/><path d="M19.8 3.2C11.3 3.5 5.2 6.2 4.1 11.6c-.6 2.8 1.3 5.1 4 5.1 5.2 0 9.9-6.1 11.7-13.5Z" fill="#9aa47b" fill-opacity=".35" stroke="none"/></svg>
+      </span>
       <span>SERENITY YOGA</span>
     </a>
     <nav class="site-nav" aria-label="Main navigation">
@@ -598,13 +896,11 @@
         <a class="button" href="#practice">Explore the practices <span aria-hidden="true">↘</span></a>
       </div>
       <div class="hero-visual" aria-label="A quiet moment for mindful movement">
-        <span class="sun-disc" aria-hidden="true"></span>
         <div class="hero-photo">
-          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&amp;fit=crop&amp;w=1100&amp;q=85" alt="A person meditating in a quiet mountain landscape">
+          <img src="images/hero-yoga-illustration.jpg" alt="Illustration of a seated yoga pose surrounded by olive leaves">
           <span class="photo-wash" aria-hidden="true"></span>
           <span class="photo-note">Breathe in. Begin again.</span>
         </div>
-        <span class="hero-stamp" aria-hidden="true">slow down<br>and listen</span>
       </div>
     </section>
 
@@ -618,27 +914,33 @@
           <p>There is no perfect way to begin. Choose the pace that feels right today.</p>
         </div>
         <div class="practice-grid">
-          <article class="practice-card">
+          <article class="practice-card" data-detail="Vinyasa links each movement with the breath, creating a flowing sequence. Move at a pace that feels steady for you, and pause whenever you need.">
             <div class="practice-image">
-              <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="A person moving through a yoga flow" loading="lazy">
+              <button class="practice-select" type="button" aria-label="Explore Vinyasa Flow" aria-controls="practice-reader" aria-expanded="false">
+                <img src="images/vinyasa-flow.jpg" alt="" loading="lazy">
+              </button>
             </div>
             <div class="practice-text">
               <h3>Vinyasa Flow</h3>
               <p>Link movement and breath in an energizing, flowing practice.</p>
             </div>
           </article>
-          <article class="practice-card">
+          <article class="practice-card" data-detail="Hatha is a steady way to explore foundational postures and alignment. Take your time setting up each pose, and let comfort guide your range of movement.">
             <div class="practice-image">
-              <img src="https://images.unsplash.com/photo-1599447421416-3414500d18a5?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="A calm, grounded yoga practice" loading="lazy">
+              <button class="practice-select" type="button" aria-label="Explore Hatha Yoga" aria-controls="practice-reader" aria-expanded="false">
+                <img src="images/hatha-yoga.jpg" alt="" loading="lazy">
+              </button>
             </div>
             <div class="practice-text">
               <h3>Hatha Yoga</h3>
               <p>Build a steady foundation with thoughtful, accessible poses.</p>
             </div>
           </article>
-          <article class="practice-card">
+          <article class="practice-card" data-detail="Yin is a slower practice with relaxed, longer-held stretches. Use support such as a cushion, and ease out of any position that feels painful or uncomfortable.">
             <div class="practice-image">
-              <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="A peaceful moment of stillness" loading="lazy">
+              <button class="practice-select" type="button" aria-label="Explore Yin and Stillness" aria-controls="practice-reader" aria-expanded="false">
+                <img src="images/yin-stillness.jpg" alt="" loading="lazy">
+              </button>
             </div>
             <div class="practice-text">
               <h3>Yin &amp; Stillness</h3>
@@ -646,6 +948,27 @@
             </div>
           </article>
         </div>
+        <section class="practice-reader" id="practice-reader" aria-label="Practice details" aria-live="polite" hidden>
+          <header class="reader-header">
+            <img class="reader-thumb" src="" alt="" aria-hidden="true">
+            <div class="reader-heading">
+              <p class="reader-count">Practice 1 of 3</p>
+              <h3 class="reader-title"></h3>
+            </div>
+            <button class="reader-close" type="button">All practices</button>
+            <div class="reader-progress" aria-hidden="true"><span></span></div>
+          </header>
+          <div class="reader-content">
+            <span class="eyebrow">Take your time</span>
+            <h3 class="reader-content-title" tabindex="-1"></h3>
+            <p class="reader-description"></p>
+            <p class="reader-note"><strong>A gentle note</strong><span class="reader-detail"></span></p>
+            <div class="reader-controls">
+              <button class="reader-nav-button previous" type="button">← Previous</button>
+              <button class="reader-nav-button next" type="button">Next practice →</button>
+            </div>
+          </div>
+        </section>
       </div>
     </section>
 
@@ -670,11 +993,112 @@
 
   <footer class="site-footer wrap">
     <a class="brand" href="#" aria-label="Serenity Yoga home">
-      <span class="brand-mark" aria-hidden="true">s</span>
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M19.8 3.2C11.3 3.5 5.2 6.2 4.1 11.6c-.6 2.8 1.3 5.1 4 5.1 5.2 0 9.9-6.1 11.7-13.5ZM4.3 20.8c1.9-6.2 5.6-10.1 11.5-13.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.7"/><path d="M19.8 3.2C11.3 3.5 5.2 6.2 4.1 11.6c-.6 2.8 1.3 5.1 4 5.1 5.2 0 9.9-6.1 11.7-13.5Z" fill="#9aa47b" fill-opacity=".35" stroke="none"/></svg>
+      </span>
       <span>SERENITY YOGA</span>
     </a>
     <p>Move gently. Breathe deeply.</p>
     <a class="footer-link" href="#practice">Back to practices ↑</a>
   </footer>
+  <script>
+    const practicesSection = document.querySelector(".practices");
+    const practiceGrid = document.querySelector(".practice-grid");
+    const practiceReader = document.querySelector(".practice-reader");
+    const practiceCards = [...document.querySelectorAll(".practice-card")];
+    const practiceButtons = [...document.querySelectorAll(".practice-select")];
+    const readerThumb = document.querySelector(".reader-thumb");
+    const readerCount = document.querySelector(".reader-count");
+    const readerProgress = document.querySelector(".reader-progress span");
+    const readerTitle = document.querySelector(".reader-title");
+    const readerContent = document.querySelector(".reader-content");
+    const readerContentTitle = document.querySelector(".reader-content-title");
+    const readerDescription = document.querySelector(".reader-description");
+    const readerDetail = document.querySelector(".reader-detail");
+    const previousPractice = document.querySelector(".reader-nav-button.previous");
+    const nextPractice = document.querySelector(".reader-nav-button.next");
+    const closeReader = document.querySelector(".reader-close");
+    let activePracticeIndex = 0;
+
+    function showPractice(index) {
+      activePracticeIndex = index;
+      const card = practiceCards[index];
+      const title = card.querySelector("h3").textContent;
+      const image = card.querySelector(".practice-select img");
+      const description = card.querySelector(".practice-text p").textContent;
+
+      readerThumb.src = image.src;
+      readerThumb.classList.remove("is-changing");
+      void readerThumb.offsetWidth;
+      readerThumb.classList.add("is-changing");
+      readerCount.textContent = `Practice ${index + 1} of ${practiceCards.length}`;
+      readerProgress.style.width = `${((index + 1) / practiceCards.length) * 100}%`;
+      readerTitle.textContent = title;
+      readerContentTitle.textContent = title;
+      readerDescription.textContent = description;
+      readerDetail.textContent = card.dataset.detail;
+      previousPractice.disabled = index === 0;
+      nextPractice.textContent = index === practiceCards.length - 1 ? "Finish →" : "Next practice →";
+      practiceButtons.forEach((button, buttonIndex) => {
+        button.setAttribute("aria-expanded", String(buttonIndex === index));
+      });
+
+      readerContent.classList.remove("is-changing");
+      void readerContent.offsetWidth;
+      readerContent.classList.add("is-changing");
+
+      if (!practiceReader.hidden) {
+        practiceReader.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }
+
+    function openPractice(index) {
+      showPractice(index);
+      practiceGrid.hidden = true;
+      practiceReader.hidden = false;
+      practiceReader.scrollIntoView({ behavior: "smooth", block: "start" });
+      readerContentTitle.focus({ preventScroll: true });
+    }
+
+    function closePractice() {
+      practiceReader.hidden = true;
+      practiceGrid.hidden = false;
+      practiceButtons.forEach((button) => button.setAttribute("aria-expanded", "false"));
+      practiceButtons[activePracticeIndex].focus();
+    }
+
+    practiceButtons.forEach((button, index) => {
+      button.addEventListener("click", () => openPractice(index));
+    });
+
+    previousPractice.addEventListener("click", () => {
+      if (activePracticeIndex > 0) {
+        showPractice(activePracticeIndex - 1);
+      }
+    });
+
+    nextPractice.addEventListener("click", () => {
+      if (activePracticeIndex < practiceCards.length - 1) {
+        showPractice(activePracticeIndex + 1);
+      } else {
+        closePractice();
+      }
+    });
+
+    closeReader.addEventListener("click", closePractice);
+
+    if ("IntersectionObserver" in window) {
+      const practicesObserver = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          practicesSection.classList.add("is-visible");
+          practicesObserver.disconnect();
+        }
+      }, { threshold: 0.12 });
+
+      practicesObserver.observe(practicesSection);
+    } else {
+      practicesSection.classList.add("is-visible");
+    }
+  </script>
 </body>
 </html>
