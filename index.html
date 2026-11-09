@@ -908,70 +908,87 @@
 
     .benefit-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
       margin-top: 22px;
     }
 
     .benefit-card {
-      padding: 18px 16px;
+      min-height: 174px;
+      padding: 20px;
       border: 1px solid var(--line);
       border-radius: 10px;
       background: rgba(232, 235, 220, .45);
+      animation: harmony-arrive .45s ease both;
     }
 
-    .benefit-card:nth-child(2) {
-      animation-delay: .1s;
-    }
-
-    .benefit-card:nth-child(3) {
-      animation-delay: .2s;
-    }
+    .benefit-card:nth-child(2) { animation-delay: .08s; }
+    .benefit-card:nth-child(3) { animation-delay: .16s; }
+    .benefit-card:nth-child(4) { animation-delay: .24s; }
+    .benefit-card:nth-child(5) { animation-delay: .32s; }
 
     .benefit-card h4 {
       display: flex;
       align-items: center;
-      gap: 9px;
-      margin: 0 0 14px;
-      color: var(--green-dark);
-      font-size: .95rem;
-    }
-
-    .benefit-card h4::before {
-      width: 9px;
-      height: 9px;
-      flex: 0 0 auto;
-      border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 0 4px rgba(108, 121, 75, .12);
-      content: "";
-    }
-
-    .benefit-card ul {
-      display: grid;
       gap: 11px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
+      margin: 0 0 12px;
+      color: var(--green-dark);
+      font-size: 1rem;
+      letter-spacing: -.02em;
     }
 
-    .benefit-card li {
-      position: relative;
-      padding-left: 16px;
-      color: var(--muted);
-      font-size: .84rem;
-      line-height: 1.55;
-    }
-
-    .benefit-card li::before {
-      position: absolute;
-      top: .65em;
-      left: 0;
-      width: 6px;
-      height: 6px;
+    .benefit-icon {
+      display: grid;
+      width: 36px;
+      height: 36px;
+      flex: 0 0 auto;
+      place-items: center;
       border-radius: 50%;
-      background: #9aa47b;
-      content: "";
+      background: rgba(108, 121, 75, .12);
+      font-size: 1.15rem;
+    }
+
+    .benefit-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .88rem;
+      line-height: 1.7;
+    }
+
+    .safety-guidelines {
+      max-width: 760px;
+      margin: 48px auto 0;
+      padding-top: 34px;
+      border-top: 1px solid var(--line);
+    }
+
+    .safety-guidelines h3 {
+      margin: 12px 0 0;
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      letter-spacing: -.055em;
+    }
+
+    .safety-card {
+      min-height: 0;
+    }
+
+    .safety-card.stop-guideline {
+      border-color: #e4d3c6;
+      background: #f3eae2;
+    }
+
+    .safety-card.stop-guideline h4 {
+      color: #805a42;
+    }
+
+    .safety-card ul {
+      display: grid;
+      gap: 9px;
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: .88rem;
+      line-height: 1.6;
     }
 
     .misconceptions {
@@ -1452,11 +1469,11 @@
         gap: 8px;
       }
 
-      .foundation-copy ul {
+      .benefit-grid {
         grid-template-columns: 1fr;
       }
 
-      .benefit-grid {
+      .foundation-copy ul {
         grid-template-columns: 1fr;
       }
 
@@ -1759,34 +1776,54 @@
                 <blockquote class="why-yoga-purpose"><strong>Practice yoga to maintain a healthy body, a quiet mind, and a balanced lifestyle.</strong></blockquote>
               </header>
 
-              <h4 class="union-heading">Benefits of Yoga</h4>
+              <h4 class="union-heading">Overall Benefits of Yoga</h4>
               <div class="benefit-grid">
                 <article class="benefit-card">
-                  <h4>For the Body</h4>
-                  <ul>
-                    <li>Improves flexibility and mobility</li>
-                    <li>Builds strength and endurance</li>
-                    <li>Enhances balance and posture</li>
-                    <li>Supports better breathing</li>
-                    <li>Increases energy and vitality</li>
-                  </ul>
+                  <h4><span class="benefit-icon" aria-hidden="true">💪</span>Strength</h4>
+                  <p>Yoga builds strength by using your own body weight through various poses. It strengthens muscles, joints, and the core, improving overall physical fitness.</p>
                 </article>
                 <article class="benefit-card">
-                  <h4>For the Mind</h4>
-                  <ul>
-                    <li>Reduces stress and anxiety</li>
-                    <li>Improves concentration and focus</li>
-                    <li>Promotes mental clarity</li>
-                    <li>Helps manage emotions calmly</li>
-                  </ul>
+                  <h4><span class="benefit-icon" aria-hidden="true">🤸</span>Flexibility</h4>
+                  <p>Regular practice lengthens and stretches muscles, increasing mobility and reducing stiffness. Greater flexibility can also help prevent injuries.</p>
                 </article>
                 <article class="benefit-card">
-                  <h4>For Overall Well-being</h4>
+                  <h4><span class="benefit-icon" aria-hidden="true">⚖️</span>Balance</h4>
+                  <p>Yoga improves both physical and mental balance. Balancing poses enhance coordination, stability, and body awareness.</p>
+                </article>
+                <article class="benefit-card">
+                  <h4><span class="benefit-icon" aria-hidden="true">🧘</span>Mindfulness</h4>
+                  <p>Yoga teaches you to focus on the present moment through conscious movement and breathing. This develops self-awareness, concentration, and inner calm.</p>
+                </article>
+                <article class="benefit-card">
+                  <h4><span class="benefit-icon" aria-hidden="true">😌</span>Stress Reduction</h4>
+                  <p>Deep breathing, relaxation, and mindful movement help calm the nervous system, reduce stress, and promote a sense of peace and well-being.</p>
+                </article>
+              </div>
+            </section>
+
+            <section class="safety-guidelines" aria-labelledby="safety-guidelines-heading">
+              <header class="misconceptions-intro">
+                <span class="eyebrow">Practice mindfully</span>
+                <h3 id="safety-guidelines-heading">Yoga Safety Guidelines</h3>
+              </header>
+
+              <div class="benefit-grid safety-grid">
+                <article class="benefit-card safety-card">
+                  <h4><span class="benefit-icon" aria-hidden="true">🌿</span>Before You Start</h4>
                   <ul>
-                    <li>Encourages healthy lifestyle habits</li>
-                    <li>Improves self-awareness</li>
-                    <li>Creates inner peace and confidence</li>
-                    <li>Fosters a deeper connection with oneself and others</li>
+                    <li>Practise on a non-slip mat.</li>
+                    <li>Practise on an empty stomach or wait 2–3 hours after a meal.</li>
+                    <li>Wear comfortable clothing.</li>
+                    <li>Never force a posture.</li>
+                    <li>Breathe naturally.</li>
+                  </ul>
+                </article>
+                <article class="benefit-card safety-card stop-guideline">
+                  <h4><span class="benefit-icon" aria-hidden="true">✋</span>Stop Immediately If</h4>
+                  <ul>
+                    <li>You feel sharp pain.</li>
+                    <li>You become dizzy.</li>
+                    <li>Breathing becomes difficult.</li>
                   </ul>
                 </article>
               </div>
