@@ -489,8 +489,405 @@
       padding: clamp(32px, 6vw, 72px);
     }
 
+    .reader-content[hidden],
+    .foundation-lesson[hidden] {
+      display: none;
+    }
+
     .reader-content.is-changing {
       animation: reader-enter .45s ease both;
+    }
+
+    .foundation-lesson {
+      padding: clamp(24px, 5vw, 54px);
+    }
+
+    .foundation-intro {
+      max-width: 760px;
+      margin: 0 auto 34px;
+      text-align: center;
+    }
+
+    .foundation-intro h2 {
+      margin: 12px 0;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -.06em;
+    }
+
+    .foundation-intro > p {
+      margin: 0 auto;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .harmony-visual {
+      position: relative;
+      display: grid;
+      max-width: 760px;
+      gap: 12px;
+      margin: 0 auto 42px;
+      padding: 22px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: linear-gradient(135deg, #f8f7ef, #edf0e3);
+    }
+
+    .harmony-visual::before,
+    .harmony-visual::after {
+      position: absolute;
+      top: 50%;
+      right: 12%;
+      width: 20%;
+      height: 1px;
+      background: #a6b08c;
+      content: "";
+      transform: rotate(12deg);
+      transform-origin: right;
+      opacity: .7;
+    }
+
+    .harmony-visual::after {
+      transform: rotate(-12deg);
+    }
+
+    .harmony-label {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      min-height: 54px;
+      align-items: center;
+      gap: 13px;
+      padding: 10px 15px;
+      border: 1px solid rgba(108, 121, 75, .16);
+      border-radius: 9px;
+      background: rgba(246, 245, 235, .92);
+      animation: harmony-arrive .55s cubic-bezier(.2, .7, .2, 1) both;
+    }
+
+    .harmony-label:nth-child(2) {
+      animation-delay: .1s;
+    }
+
+    .harmony-label:nth-child(3) {
+      animation-delay: .2s;
+    }
+
+    .harmony-dot {
+      width: 10px;
+      height: 10px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 5px rgba(108, 121, 75, .12);
+    }
+
+    .harmony-label:nth-child(2) .harmony-dot {
+      background: #929b6d;
+    }
+
+    .harmony-label:nth-child(3) .harmony-dot {
+      background: #b0926c;
+    }
+
+    .harmony-label strong {
+      min-width: 86px;
+      color: var(--green-dark);
+    }
+
+    .harmony-label span:last-child {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .foundation-copy {
+      max-width: 760px;
+      margin: 0 auto 38px;
+    }
+
+    .foundation-copy h3,
+    .union-heading {
+      margin: 0 0 12px;
+      font-size: 1.25rem;
+      letter-spacing: -.035em;
+    }
+
+    .foundation-copy p {
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .foundation-copy ul {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .foundation-copy li {
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--green-dark);
+      background: rgba(232, 235, 220, .5);
+      font-size: .92rem;
+    }
+
+    .definition-section {
+      max-width: 760px;
+      margin: 0 auto;
+      padding-top: 30px;
+      border-top: 1px solid var(--line);
+    }
+
+    .definition-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-block: 18px;
+    }
+
+    .definition-tab {
+      min-height: 40px;
+      padding: 0 16px;
+      border: 1px solid #c5cbb4;
+      border-radius: 99px;
+      background: transparent;
+      color: var(--green-dark);
+      cursor: pointer;
+      font: inherit;
+      font-size: .85rem;
+      font-weight: 600;
+      transition: background .2s ease, color .2s ease, border-color .2s ease;
+    }
+
+    .definition-tab[aria-selected="true"] {
+      border-color: var(--green-dark);
+      background: var(--green-dark);
+      color: white;
+    }
+
+    .definition-panel {
+      min-height: 112px;
+      padding: 22px;
+      border-left: 3px solid var(--green);
+      border-radius: 0 10px 10px 0;
+      background: var(--sage);
+    }
+
+    .definition-panel.is-changing {
+      animation: reader-enter .35s ease both;
+    }
+
+    .definition-panel h4 {
+      margin: 0 0 8px;
+      color: var(--green-dark);
+      font-size: .78rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .definition-panel blockquote {
+      margin: 0;
+      font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+      font-weight: 500;
+      line-height: 1.55;
+    }
+
+    .universal-definition {
+      max-width: 760px;
+      margin: 32px auto 0;
+      padding: 24px;
+      border-radius: 12px;
+      background: var(--green-dark);
+      color: white;
+    }
+
+    .universal-definition h3 {
+      margin: 0 0 10px;
+      color: #dce3cc;
+      font-size: .78rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .universal-definition blockquote {
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .foundation-closing {
+      max-width: 760px;
+      margin: 24px auto 0;
+      color: var(--muted);
+      line-height: 1.75;
+      text-align: center;
+    }
+
+    .foundation-closing strong {
+      display: block;
+      margin-top: 8px;
+      color: var(--green-dark);
+      font-size: 1.04rem;
+    }
+
+    .history-section {
+      max-width: 760px;
+      margin: 48px auto 0;
+      padding-top: 34px;
+      border-top: 1px solid var(--line);
+    }
+
+    .history-intro {
+      margin-bottom: 26px;
+    }
+
+    .history-intro h3 {
+      margin: 12px 0;
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      letter-spacing: -.055em;
+    }
+
+    .history-intro p,
+    .history-period p {
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .history-timeline {
+      position: relative;
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .history-timeline::before {
+      position: absolute;
+      top: 24px;
+      bottom: 24px;
+      left: 17px;
+      width: 1px;
+      background: #c5cbb4;
+      content: "";
+    }
+
+    .history-period {
+      position: relative;
+      display: grid;
+      grid-template-columns: 35px minmax(0, 1fr);
+      gap: 14px;
+      animation: harmony-arrive .45s ease both;
+    }
+
+    .history-period:nth-child(2) {
+      animation-delay: .06s;
+    }
+
+    .history-period:nth-child(3) {
+      animation-delay: .12s;
+    }
+
+    .history-period:nth-child(4) {
+      animation-delay: .18s;
+    }
+
+    .history-period:nth-child(5) {
+      animation-delay: .24s;
+    }
+
+    .history-period:nth-child(6) {
+      animation-delay: .3s;
+    }
+
+    .history-period:nth-child(7) {
+      animation-delay: .36s;
+    }
+
+    .history-marker {
+      z-index: 1;
+      display: grid;
+      width: 35px;
+      height: 35px;
+      place-items: center;
+      border: 1px solid #c5cbb4;
+      border-radius: 50%;
+      background: var(--paper);
+      color: var(--green-dark);
+      font-size: .73rem;
+      font-weight: 700;
+    }
+
+    .history-period > div:last-child {
+      padding: 4px 0 16px;
+    }
+
+    .history-period h4 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+      letter-spacing: -.02em;
+    }
+
+    .history-period time {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--green);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+    }
+
+    .history-period p {
+      margin: 0;
+      font-size: .9rem;
+    }
+
+    .history-summary {
+      margin-top: 24px;
+      padding: 22px;
+      border-left: 3px solid var(--green);
+      border-radius: 0 10px 10px 0;
+      background: var(--sage);
+    }
+
+    .history-summary h3 {
+      margin: 0 0 10px;
+      color: var(--green-dark);
+      font-size: .77rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .history-summary blockquote {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.7;
+    }
+
+    .history-quote {
+      margin: 18px 0 0;
+      color: var(--green-dark);
+      font-size: .94rem;
+      font-style: italic;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    @keyframes harmony-arrive {
+      from {
+        opacity: 0;
+        transform: translateX(-18px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
 
     .reader-content h3 {
@@ -837,6 +1234,33 @@
         gap: 8px;
       }
 
+      .foundation-copy ul {
+        grid-template-columns: 1fr;
+      }
+
+      .harmony-visual {
+        padding: 14px;
+      }
+
+      .harmony-label {
+        gap: 10px;
+        padding-inline: 11px;
+      }
+
+      .harmony-label strong {
+        min-width: 74px;
+        font-size: .87rem;
+      }
+
+      .harmony-label span:last-child {
+        font-size: .8rem;
+      }
+
+      .definition-tab {
+        padding-inline: 12px;
+        font-size: .79rem;
+      }
+
       .reader-nav-button {
         min-height: 40px;
         padding-inline: 11px;
@@ -865,6 +1289,15 @@
 
       .reader-thumb {
         animation: none !important;
+      }
+
+      .harmony-label,
+      .harmony-label:nth-child(2),
+      .harmony-label:nth-child(3),
+      .history-period,
+      .history-period:nth-child(n),
+      .definition-panel.is-changing {
+        animation: none;
       }
     }
   </style>
@@ -964,10 +1397,140 @@
             <p class="reader-description"></p>
             <p class="reader-note"><strong>A gentle note</strong><span class="reader-detail"></span></p>
             <div class="reader-controls">
-              <button class="reader-nav-button previous" type="button">← Previous</button>
+              <button class="reader-nav-button previous" type="button" disabled>← Previous</button>
               <button class="reader-nav-button next" type="button">Next topic →</button>
             </div>
           </div>
+          <section class="foundation-lesson" aria-labelledby="foundation-heading" hidden>
+            <header class="foundation-intro">
+              <span class="eyebrow">Section 1 · Yoga Foundations</span>
+              <h2 id="foundation-heading" tabindex="-1">What is Yoga?</h2>
+              <p>A beginner-friendly explanation of how body, mind, and emotions can find a shared direction.</p>
+            </header>
+
+            <div class="harmony-visual" aria-label="Three parts coming into harmony">
+              <div class="harmony-label"><span class="harmony-dot" aria-hidden="true"></span><strong>Body</strong><span>Tired from the day</span></div>
+              <div class="harmony-label"><span class="harmony-dot" aria-hidden="true"></span><strong>Mind</strong><span>Worrying about the future</span></div>
+              <div class="harmony-label"><span class="harmony-dot" aria-hidden="true"></span><strong>Emotions</strong><span>Holding on to the past</span></div>
+            </div>
+
+            <div class="foundation-copy">
+              <h3>Finding one direction</h3>
+              <p>Imagine your body, mind, and emotions are like three people pulling a rope in different directions. Yoga helps all three move in the same direction. When that happens, you can feel more balanced, healthy, and peaceful.</p>
+            </div>
+
+            <div class="foundation-copy">
+              <h3>The deeper meaning</h3>
+              <p>The word <strong>Yoga</strong> comes from the Sanskrit root <strong>Yuj</strong>, which means <strong>“to join,” “to unite,”</strong> or <strong>“to connect.”</strong></p>
+              <p class="union-heading">Yoga is the union of:</p>
+              <ul>
+                <li>Body and mind</li>
+                <li>Breath and movement</li>
+                <li>Action and awareness</li>
+                <li>Individual self and universal consciousness</li>
+              </ul>
+            </div>
+
+            <div class="definition-section">
+              <h3>One idea, understood in different ways</h3>
+              <p class="reader-description">Choose a label to see how the definition grows with the practitioner.</p>
+              <div class="definition-tabs" role="tablist" aria-label="Yoga definitions by experience level">
+                <button class="definition-tab" id="definition-beginner" type="button" role="tab" aria-selected="true" aria-controls="definition-panel" tabindex="0" data-level="beginner">Beginner</button>
+                <button class="definition-tab" id="definition-intermediate" type="button" role="tab" aria-selected="false" aria-controls="definition-panel" tabindex="-1" data-level="intermediate">Intermediate</button>
+                <button class="definition-tab" id="definition-advanced" type="button" role="tab" aria-selected="false" aria-controls="definition-panel" tabindex="-1" data-level="advanced">Advanced</button>
+              </div>
+              <div class="definition-panel" id="definition-panel" role="tabpanel" aria-labelledby="definition-beginner" tabindex="0">
+                <h4 class="definition-level">For Beginners</h4>
+                <blockquote class="definition-quote">Yoga is learning to move, breathe, and relax better.</blockquote>
+              </div>
+            </div>
+
+            <aside class="universal-definition">
+              <h3>One definition for everyone</h3>
+              <blockquote><strong>Yoga is the art and science of living in harmony with yourself and the world around you.</strong></blockquote>
+            </aside>
+
+            <p class="foundation-closing">Whether you come to yoga for fitness, stress relief, healing, flexibility, or spiritual growth, the journey begins and ends with the same purpose:<strong>To know yourself better and live more consciously, peacefully, and joyfully.</strong></p>
+
+            <section class="history-section" aria-labelledby="history-heading">
+              <header class="history-intro">
+                <span class="eyebrow">Origins &amp; evolution</span>
+                <h3 id="history-heading">Brief History of Yoga</h3>
+                <p>Yoga is an ancient practice that originated in India more than 5,000 years ago. Its history reflects a path that has continued to evolve across generations.</p>
+              </header>
+
+              <ol class="history-timeline" aria-label="Yoga through history">
+                <li class="history-period">
+                  <span class="history-marker" aria-hidden="true">01</span>
+                  <div>
+                    <time>5000+ years ago</time>
+                    <h4>Early Beginnings</h4>
+                    <p>Some of the earliest proposed evidence is associated with the Indus Valley Civilization (around 3000–1500 BCE), where seals depict figures in seated poses sometimes interpreted as meditative.</p>
+                  </div>
+                </li>
+                <li class="history-period">
+                  <span class="history-marker" aria-hidden="true">02</span>
+                  <div>
+                    <time>c. 1500 BCE</time>
+                    <h4>Vedic Period</h4>
+                    <p>Yoga-related ideas appear in the Vedas, among India's oldest sacred texts. Practice was associated with ritual, meditation, and spiritual discipline.</p>
+                  </div>
+                </li>
+                <li class="history-period">
+                  <span class="history-marker" aria-hidden="true">03</span>
+                  <div>
+                    <time>c. 800–300 BCE</time>
+                    <h4>Upanishadic Period</h4>
+                    <p>The Upanishads developed ideas of inner inquiry, self-discovery, and the relationship between the individual self and universal consciousness.</p>
+                  </div>
+                </li>
+                <li class="history-period">
+                  <span class="history-marker" aria-hidden="true">04</span>
+                  <div>
+                    <time>c. 200 BCE</time>
+                    <h4>Classical Yoga</h4>
+                    <p>Patanjali's Yoga Sutras became a foundational text. The Eight Limbs of Yoga, or Ashtanga Yoga, describe a structured path for ethical, physical, mental, and spiritual practice.</p>
+                  </div>
+                </li>
+                <li class="history-period">
+                  <span class="history-marker" aria-hidden="true">05</span>
+                  <div>
+                    <time>9th–15th century CE</time>
+                    <h4>Hatha Yoga</h4>
+                    <p>Hatha Yoga traditions developed practices that gave greater attention to asana (postures), pranayama (breath regulation), and purification practices.</p>
+                  </div>
+                </li>
+                <li class="history-period">
+                  <span class="history-marker" aria-hidden="true">06</span>
+                  <div>
+                    <time>19th–20th century CE</time>
+                    <h4>Modern Yoga</h4>
+                    <p>Indian teachers including Swami Vivekananda, T. Krishnamacharya, B.K.S. Iyengar, and Pattabhi Jois helped introduce and shape modern yoga around the world.</p>
+                  </div>
+                </li>
+                <li class="history-period">
+                  <span class="history-marker" aria-hidden="true">07</span>
+                  <div>
+                    <time>Today</time>
+                    <h4>A Worldwide Practice</h4>
+                    <p>People around the world practise yoga for health, fitness, stress management, self-understanding, and spiritual development.</p>
+                  </div>
+                </li>
+              </ol>
+
+              <aside class="history-summary">
+                <h3>Yoga journey in one line</h3>
+                <blockquote>Yoga began as a path to self-realisation and has evolved into a holistic practice that nurtures the body, mind, and spirit.</blockquote>
+              </aside>
+
+              <blockquote class="history-quote">“Yoga is an ancient science of living that helps us unite the body, mind, breath, and spirit.”</blockquote>
+            </section>
+
+            <div class="reader-controls">
+              <button class="reader-nav-button previous" type="button">← Previous</button>
+              <button class="reader-nav-button next" type="button">Next topic →</button>
+            </div>
+          </section>
         </section>
       </div>
     </section>
@@ -1005,6 +1568,8 @@
     const practicesSection = document.querySelector(".practices");
     const practiceGrid = document.querySelector(".practice-grid");
     const practiceReader = document.querySelector(".practice-reader");
+    const foundationLesson = document.querySelector(".foundation-lesson");
+    const foundationHeading = document.querySelector("#foundation-heading");
     const practiceCards = [...document.querySelectorAll(".practice-card")];
     const practiceButtons = [...document.querySelectorAll(".practice-select")];
     const readerThumb = document.querySelector(".reader-thumb");
@@ -1018,7 +1583,67 @@
     const previousPractice = document.querySelector(".reader-nav-button.previous");
     const nextPractice = document.querySelector(".reader-nav-button.next");
     const closeReader = document.querySelector(".reader-close");
+    const definitionTabs = [...document.querySelectorAll(".definition-tab")];
+    const definitionPanel = document.querySelector(".definition-panel");
+    const definitionLevel = document.querySelector(".definition-level");
+    const definitionQuote = document.querySelector(".definition-quote");
     let activePracticeIndex = 0;
+    const definitions = {
+      beginner: {
+        label: "For Beginners",
+        quote: "Yoga is learning to move, breathe, and relax better."
+      },
+      intermediate: {
+        label: "For Intermediate Practitioners",
+        quote: "Yoga is developing strength, flexibility, focus, and emotional balance."
+      },
+      advanced: {
+        label: "For Advanced Practitioners",
+        quote: "Yoga is a journey of self-discovery, inner peace, and union with one's true nature."
+      }
+    };
+
+    function selectDefinition(tab, moveFocus = false) {
+      const definition = definitions[tab.dataset.level];
+
+      definitionTabs.forEach((item) => {
+        const selected = item === tab;
+        item.setAttribute("aria-selected", String(selected));
+        item.tabIndex = selected ? 0 : -1;
+      });
+      definitionPanel.setAttribute("aria-labelledby", tab.id);
+      definitionLevel.textContent = definition.label;
+      definitionQuote.textContent = definition.quote;
+      definitionPanel.classList.remove("is-changing");
+      void definitionPanel.offsetWidth;
+      definitionPanel.classList.add("is-changing");
+
+      if (moveFocus) {
+        tab.focus();
+      }
+    }
+
+    definitionTabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => selectDefinition(tab));
+      tab.addEventListener("keydown", (event) => {
+        let nextIndex;
+
+        if (event.key === "ArrowRight") {
+          nextIndex = (index + 1) % definitionTabs.length;
+        } else if (event.key === "ArrowLeft") {
+          nextIndex = (index - 1 + definitionTabs.length) % definitionTabs.length;
+        } else if (event.key === "Home") {
+          nextIndex = 0;
+        } else if (event.key === "End") {
+          nextIndex = definitionTabs.length - 1;
+        } else {
+          return;
+        }
+
+        event.preventDefault();
+        selectDefinition(definitionTabs[nextIndex], true);
+      });
+    });
 
     function showPractice(index) {
       activePracticeIndex = index;
@@ -1026,6 +1651,7 @@
       const title = card.querySelector("h3").textContent;
       const image = card.querySelector(".practice-select img");
       const description = card.querySelector(".practice-text p").textContent;
+      const isFoundation = index === 0;
 
       readerThumb.src = image.src;
       readerThumb.classList.remove("is-changing");
@@ -1037,18 +1663,25 @@
       readerContentTitle.textContent = title;
       readerDescription.textContent = description;
       readerDetail.textContent = card.dataset.detail;
+      readerContent.hidden = isFoundation;
+      foundationLesson.hidden = !isFoundation;
       previousPractice.disabled = index === 0;
+      const nextButton = foundationLesson.querySelector(".reader-nav-button.next");
       nextPractice.textContent = index === practiceCards.length - 1 ? "Finish →" : "Next topic →";
+      nextButton.textContent = index === practiceCards.length - 1 ? "Finish →" : "Next topic →";
       practiceButtons.forEach((button, buttonIndex) => {
         button.setAttribute("aria-expanded", String(buttonIndex === index));
       });
 
-      readerContent.classList.remove("is-changing");
-      void readerContent.offsetWidth;
-      readerContent.classList.add("is-changing");
+      if (!isFoundation) {
+        readerContent.classList.remove("is-changing");
+        void readerContent.offsetWidth;
+        readerContent.classList.add("is-changing");
+      }
 
       if (!practiceReader.hidden) {
         practiceReader.scrollTo({ top: 0, behavior: "smooth" });
+        (isFoundation ? foundationHeading : readerContentTitle).focus({ preventScroll: true });
       }
     }
 
@@ -1057,7 +1690,7 @@
       practiceGrid.hidden = true;
       practiceReader.hidden = false;
       practiceReader.scrollIntoView({ behavior: "smooth", block: "start" });
-      readerContentTitle.focus({ preventScroll: true });
+      (index === 0 ? foundationHeading : readerContentTitle).focus({ preventScroll: true });
     }
 
     function closePractice() {
@@ -1086,6 +1719,10 @@
     });
 
     closeReader.addEventListener("click", closePractice);
+
+    foundationLesson.querySelector(".reader-nav-button.next").addEventListener("click", () => {
+      showPractice(activePracticeIndex + 1);
+    });
 
     if ("IntersectionObserver" in window) {
       const practicesObserver = new IntersectionObserver(([entry]) => {
