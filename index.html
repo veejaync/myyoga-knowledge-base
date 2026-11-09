@@ -878,6 +878,224 @@
       text-align: center;
     }
 
+    .why-yoga {
+      max-width: 760px;
+      margin: 48px auto 0;
+      padding-top: 34px;
+      border-top: 1px solid var(--line);
+    }
+
+    .why-yoga-intro {
+      margin-bottom: 24px;
+    }
+
+    .why-yoga-intro h3 {
+      margin: 12px 0;
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      letter-spacing: -.055em;
+    }
+
+    .why-yoga-purpose {
+      margin: 0;
+      padding: 18px 20px;
+      border-left: 3px solid var(--green);
+      border-radius: 0 10px 10px 0;
+      background: var(--sage);
+      color: var(--green-dark);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .benefit-card {
+      padding: 18px 16px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(232, 235, 220, .45);
+    }
+
+    .benefit-card:nth-child(2) {
+      animation-delay: .1s;
+    }
+
+    .benefit-card:nth-child(3) {
+      animation-delay: .2s;
+    }
+
+    .benefit-card h4 {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 14px;
+      color: var(--green-dark);
+      font-size: .95rem;
+    }
+
+    .benefit-card h4::before {
+      width: 9px;
+      height: 9px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 4px rgba(108, 121, 75, .12);
+      content: "";
+    }
+
+    .benefit-card ul {
+      display: grid;
+      gap: 11px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .benefit-card li {
+      position: relative;
+      padding-left: 16px;
+      color: var(--muted);
+      font-size: .84rem;
+      line-height: 1.55;
+    }
+
+    .benefit-card li::before {
+      position: absolute;
+      top: .65em;
+      left: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #9aa47b;
+      content: "";
+    }
+
+    .misconceptions {
+      max-width: 760px;
+      margin: 48px auto 0;
+      padding-top: 34px;
+      border-top: 1px solid var(--line);
+    }
+
+    .misconceptions-intro {
+      margin-bottom: 22px;
+    }
+
+    .misconceptions-intro h3 {
+      margin: 12px 0;
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      letter-spacing: -.055em;
+    }
+
+    .misconceptions-intro p {
+      margin-bottom: 0;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .misconception-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .misconception-item {
+      display: grid;
+      gap: 11px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(232, 235, 220, .35);
+      animation: harmony-arrive .45s ease both;
+    }
+
+    .misconception-item:nth-child(2) { animation-delay: .05s; }
+    .misconception-item:nth-child(3) { animation-delay: .1s; }
+    .misconception-item:nth-child(4) { animation-delay: .15s; }
+    .misconception-item:nth-child(5) { animation-delay: .2s; }
+    .misconception-item:nth-child(6) { animation-delay: .25s; }
+    .misconception-item:nth-child(7) { animation-delay: .3s; }
+    .misconception-item:nth-child(8) { animation-delay: .35s; }
+
+    .misconception-line {
+      display: grid;
+      grid-template-columns: 26px minmax(0, 1fr);
+      align-items: start;
+      gap: 10px;
+      font-size: .9rem;
+      line-height: 1.65;
+    }
+
+    .misconception-line strong {
+      color: var(--ink);
+    }
+
+    .misconception-line p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .misconception-mark {
+      display: grid;
+      width: 23px;
+      height: 23px;
+      place-items: center;
+      border-radius: 50%;
+      font-size: .9rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .misconception-mark.no {
+      background: #f0e7dc;
+      color: #966c50;
+    }
+
+    .misconception-mark.yes {
+      background: #e2e8d7;
+      color: var(--green-dark);
+    }
+
+    .beautiful-truth {
+      margin: 24px 0 0;
+      padding: 22px;
+      border-radius: 12px;
+      background: var(--green-dark);
+      color: white;
+    }
+
+    .beautiful-truth h4 {
+      margin: 0 0 10px;
+      color: #dce3cc;
+      font-size: .77rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .beautiful-truth blockquote {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.7;
+    }
+
+    .beginner-message {
+      margin: 18px 0 0;
+      padding: 18px 20px;
+      border-left: 3px solid var(--green);
+      border-radius: 0 10px 10px 0;
+      background: var(--sage);
+      color: var(--green-dark);
+      font-size: .92rem;
+      line-height: 1.75;
+    }
+
     @keyframes harmony-arrive {
       from {
         opacity: 0;
@@ -1238,6 +1456,10 @@
         grid-template-columns: 1fr;
       }
 
+      .benefit-grid {
+        grid-template-columns: 1fr;
+      }
+
       .harmony-visual {
         padding: 14px;
       }
@@ -1296,6 +1518,10 @@
       .harmony-label:nth-child(3),
       .history-period,
       .history-period:nth-child(n),
+      .benefit-card,
+      .benefit-card:nth-child(n),
+      .misconception-item,
+      .misconception-item:nth-child(n),
       .definition-panel.is-changing {
         animation: none;
       }
@@ -1524,6 +1750,96 @@
               </aside>
 
               <blockquote class="history-quote">“Yoga is an ancient science of living that helps us unite the body, mind, breath, and spirit.”</blockquote>
+            </section>
+
+            <section class="why-yoga" aria-labelledby="why-yoga-heading">
+              <header class="why-yoga-intro">
+                <span class="eyebrow">Purpose &amp; benefits</span>
+                <h3 id="why-yoga-heading">Why Practice Yoga?</h3>
+                <blockquote class="why-yoga-purpose"><strong>Practice yoga to maintain a healthy body, a quiet mind, and a balanced lifestyle.</strong></blockquote>
+              </header>
+
+              <h4 class="union-heading">Benefits of Yoga</h4>
+              <div class="benefit-grid">
+                <article class="benefit-card">
+                  <h4>For the Body</h4>
+                  <ul>
+                    <li>Improves flexibility and mobility</li>
+                    <li>Builds strength and endurance</li>
+                    <li>Enhances balance and posture</li>
+                    <li>Supports better breathing</li>
+                    <li>Increases energy and vitality</li>
+                  </ul>
+                </article>
+                <article class="benefit-card">
+                  <h4>For the Mind</h4>
+                  <ul>
+                    <li>Reduces stress and anxiety</li>
+                    <li>Improves concentration and focus</li>
+                    <li>Promotes mental clarity</li>
+                    <li>Helps manage emotions calmly</li>
+                  </ul>
+                </article>
+                <article class="benefit-card">
+                  <h4>For Overall Well-being</h4>
+                  <ul>
+                    <li>Encourages healthy lifestyle habits</li>
+                    <li>Improves self-awareness</li>
+                    <li>Creates inner peace and confidence</li>
+                    <li>Fosters a deeper connection with oneself and others</li>
+                  </ul>
+                </article>
+              </div>
+            </section>
+
+            <section class="misconceptions" aria-labelledby="misconceptions-heading">
+              <header class="misconceptions-intro">
+                <span class="eyebrow">Clear the air</span>
+                <h3 id="misconceptions-heading">Common Misconceptions About Yoga</h3>
+                <p>Many people avoid yoga because of misunderstandings about what it really is. Here are some common misconceptions and what to know instead.</p>
+              </header>
+
+              <ul class="misconception-list">
+                <li class="misconception-item">
+                  <div class="misconception-line"><span class="misconception-mark no" aria-hidden="true">×</span><strong>“I need to be flexible to do yoga.”</strong></div>
+                  <div class="misconception-line"><span class="misconception-mark yes" aria-hidden="true">✓</span><p>Yoga helps you become flexible. Flexibility is a result of practice, not a requirement.</p></div>
+                </li>
+                <li class="misconception-item">
+                  <div class="misconception-line"><span class="misconception-mark no" aria-hidden="true">×</span><strong>“Yoga is only stretching.”</strong></div>
+                  <div class="misconception-line"><span class="misconception-mark yes" aria-hidden="true">✓</span><p>Yoga includes strength, balance, breathing techniques, concentration, relaxation, and self-awareness.</p></div>
+                </li>
+                <li class="misconception-item">
+                  <div class="misconception-line"><span class="misconception-mark no" aria-hidden="true">×</span><strong>“Yoga is only for women.”</strong></div>
+                  <div class="misconception-line"><span class="misconception-mark yes" aria-hidden="true">✓</span><p>Yoga is for everyone, regardless of age, gender, fitness level, or background.</p></div>
+                </li>
+                <li class="misconception-item">
+                  <div class="misconception-line"><span class="misconception-mark no" aria-hidden="true">×</span><strong>“Yoga is a religion.”</strong></div>
+                  <div class="misconception-line"><span class="misconception-mark yes" aria-hidden="true">✓</span><p>Yoga is a practice and philosophy for well-being. People of all faiths and beliefs can practise yoga.</p></div>
+                </li>
+                <li class="misconception-item">
+                  <div class="misconception-line"><span class="misconception-mark no" aria-hidden="true">×</span><strong>“You have to do difficult poses to be good at yoga.”</strong></div>
+                  <div class="misconception-line"><span class="misconception-mark yes" aria-hidden="true">✓</span><p>Yoga is not about advanced postures. It is about practising with awareness and respecting your body’s limits.</p></div>
+                </li>
+                <li class="misconception-item">
+                  <div class="misconception-line"><span class="misconception-mark no" aria-hidden="true">×</span><strong>“Yoga is only for young and fit people.”</strong></div>
+                  <div class="misconception-line"><span class="misconception-mark yes" aria-hidden="true">✓</span><p>Yoga can be adapted for children, adults, seniors, athletes, and people with physical limitations.</p></div>
+                </li>
+                <li class="misconception-item">
+                  <div class="misconception-line"><span class="misconception-mark no" aria-hidden="true">×</span><strong>“Yoga is too slow and doesn’t provide a workout.”</strong></div>
+                  <div class="misconception-line"><span class="misconception-mark yes" aria-hidden="true">✓</span><p>Some styles are gentle, while others, such as Power Yoga and Vinyasa Yoga, can be physically challenging and build strength and endurance.</p></div>
+                </li>
+                <li class="misconception-item">
+                  <div class="misconception-line"><span class="misconception-mark no" aria-hidden="true">×</span><strong>“Yoga is about touching your toes.”</strong></div>
+                  <div class="misconception-line"><span class="misconception-mark yes" aria-hidden="true">✓</span><p>Yoga is about connecting with yourself, improving your health, and calming your mind.</p></div>
+                </li>
+              </ul>
+
+              <aside class="beautiful-truth">
+                <h4>A Beautiful Truth</h4>
+                <blockquote><strong>The goal of yoga is not to perform the perfect pose. The goal is to become more aware, balanced, and connected with yourself.</strong></blockquote>
+              </aside>
+
+              <p class="beginner-message"><strong>Simple Message for Beginners:</strong> Anyone can start yoga. You don’t need to be flexible, young, strong, or spiritual. You only need an open mind and a willingness to begin.</p>
             </section>
 
             <div class="reader-controls">
