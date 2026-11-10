@@ -490,7 +490,8 @@
     }
 
     .reader-content[hidden],
-    .foundation-lesson[hidden] {
+    .foundation-lesson[hidden],
+    .pranayama[hidden] {
       display: none;
     }
 
@@ -953,6 +954,173 @@
       color: var(--muted);
       font-size: .88rem;
       line-height: 1.7;
+    }
+
+    .pranayama {
+      padding: clamp(24px, 5vw, 54px);
+    }
+
+    .pranayama > header,
+    .pranayama > .union-heading,
+    .pranayama > .breathing-explanation,
+    .pranayama > .breathing-understanding,
+    .pranayama > .breath-regions,
+    .pranayama > .breathing-practice {
+      max-width: 760px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .pranayama h2 {
+      margin: 12px 0;
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      letter-spacing: -.055em;
+    }
+
+    .pranayama-intro,
+    .breathing-explanation {
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .pranayama-intro {
+      margin-bottom: 20px;
+    }
+
+    .breathing-explanation {
+      margin: 0;
+      padding: 18px 20px;
+      border-left: 3px solid var(--green);
+      border-radius: 0 10px 10px 0;
+      background: var(--sage);
+    }
+
+    .breath-regions {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .breath-region {
+      display: grid;
+      grid-template-columns: 36px minmax(0, 1fr);
+      align-items: start;
+      gap: 5px 12px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(232, 235, 220, .45);
+    }
+
+    .breath-region span {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      grid-row: span 2;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(108, 121, 75, .12);
+      color: var(--green-dark);
+      font-size: .85rem;
+      font-weight: 700;
+    }
+
+    .breath-region strong {
+      color: var(--green-dark);
+    }
+
+    .breath-region p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .82rem;
+      line-height: 1.55;
+    }
+
+    .breath-map-note {
+      margin: 12px auto 0;
+      color: var(--muted);
+      font-size: .84rem;
+      line-height: 1.65;
+    }
+
+    .breath-map-note strong {
+      color: var(--green-dark);
+    }
+
+    .breathing-practice {
+      margin-top: 28px;
+    }
+
+    .breathing-practice h4 {
+      margin: 0 0 12px;
+      color: var(--green-dark);
+      font-size: 1.15rem;
+    }
+
+    .breathing-understanding {
+      margin: 0 0 18px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .breathing-understanding strong {
+      color: var(--ink);
+    }
+
+    .breathing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .breathing-card {
+      min-height: 0;
+    }
+
+    .breathing-card ol,
+    .breathing-card ul {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: .88rem;
+      line-height: 1.6;
+    }
+
+    .breathing-benefits {
+      margin-top: 14px !important;
+    }
+
+    .breathing-visual {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 12px;
+      margin-top: 14px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(232, 235, 220, .35);
+      color: var(--green-dark);
+      text-align: center;
+    }
+
+    .breathing-visual strong,
+    .breathing-visual span {
+      display: block;
+    }
+
+    .breathing-visual span {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .breathing-visual .breath-arrow {
+      color: var(--green);
+      font-size: 1.4rem;
     }
 
     .safety-guidelines {
@@ -1473,6 +1641,11 @@
         grid-template-columns: 1fr;
       }
 
+      .breath-regions,
+      .breathing-grid {
+        grid-template-columns: 1fr;
+      }
+
       .foundation-copy ul {
         grid-template-columns: 1fr;
       }
@@ -1884,6 +2057,67 @@
               <button class="reader-nav-button next" type="button">Next topic →</button>
             </div>
           </section>
+          <section class="pranayama" aria-labelledby="pranayama-heading" hidden>
+            <header class="foundation-intro">
+              <span class="eyebrow">Section 2 · Breath &amp; Practice</span>
+              <h2 id="pranayama-heading" tabindex="-1">Yogic Breathing (Pranayama for Beginners)</h2>
+              <p>A simple way to explore slow, gentle, conscious breathing and notice how the breath moves through the body.</p>
+            </header>
+
+            <h4 class="union-heading">What is Yogic Breathing?</h4>
+            <p class="breathing-explanation"><strong>Yogic breathing is a calm, unhurried way to notice your whole breath.</strong> As you breathe in, your diaphragm moves down, your abdomen can soften outward, and your lower ribs gently widen. As you breathe out, these movements naturally ease back. The breath should stay smooth and comfortable—there is no need to take the biggest breath possible.</p>
+            <p class="breathing-understanding"><strong>Simple Definition:</strong> Yogic breathing is the practice of breathing slowly, deeply, and consciously to nourish the body and calm the mind.</p>
+
+            <div class="breath-regions" aria-label="Three gentle movements to notice during an inhale">
+              <div class="breath-region"><span aria-hidden="true">1</span><strong>Belly softens</strong><p>The abdomen may gently move outward as the diaphragm descends.</p></div>
+              <div class="breath-region"><span aria-hidden="true">2</span><strong>Ribs widen</strong><p>Notice a little expansion around the sides of your lower ribs.</p></div>
+              <div class="breath-region"><span aria-hidden="true">3</span><strong>Chest responds</strong><p>The upper chest may move slightly. Keep your shoulders relaxed.</p></div>
+            </div>
+            <p class="breath-map-note"><strong>A helpful image, not literal sections:</strong> Air travels into your lungs—not into your belly. These cues describe gentle movement around your torso, not three separate compartments of the lungs. Everyone’s breath moves a little differently.</p>
+
+            <div class="breathing-practice">
+              <h4>1. Belly Breathing (Abdominal Breathing)</h4>
+              <p class="breathing-understanding"><strong>Easy understanding:</strong> Imagine a soft balloon inside your stomach. As you inhale, the balloon gently expands; as you exhale, it gently deflates.</p>
+              <div class="breathing-grid">
+                <article class="benefit-card breathing-card">
+                  <h4><span class="benefit-icon" aria-hidden="true">🌬️</span>How to Practice</h4>
+                  <ol>
+                    <li>Sit comfortably or lie on your back.</li>
+                    <li>Place one hand on your belly.</li>
+                    <li>Breathe in slowly through the nose.</li>
+                    <li>Feel the belly rise outward.</li>
+                    <li>Breathe out slowly through the nose.</li>
+                    <li>Feel the belly gently fall.</li>
+                  </ol>
+                </article>
+                <article class="benefit-card breathing-card">
+                  <h4><span class="benefit-icon" aria-hidden="true">🧘</span>What You Should Feel</h4>
+                  <ul>
+                    <li>The belly moves up and down.</li>
+                    <li>The chest stays mostly relaxed.</li>
+                    <li>Breathing feels easy and natural.</li>
+                  </ul>
+                  <h4 class="breathing-benefits">Benefits</h4>
+                  <ul>
+                    <li>May help calm the nervous system.</li>
+                    <li>May reduce stress and anxiety.</li>
+                    <li>Encourages comfortable, steady breathing.</li>
+                    <li>Promotes relaxation.</li>
+                  </ul>
+                </article>
+              </div>
+              <div class="breathing-visual" aria-label="With inhalation the belly moves outward; with exhalation it moves inward">
+                <div><strong>Inhale</strong><span>Belly out</span></div>
+                <span class="breath-arrow" aria-hidden="true">↔</span>
+                <div><strong>Exhale</strong><span>Belly in</span></div>
+              </div>
+            </div>
+
+            <div class="reader-controls">
+              <button class="reader-nav-button previous" type="button">← Previous</button>
+              <button class="reader-nav-button next" type="button">Next topic →</button>
+            </div>
+          </section>
         </section>
       </div>
     </section>
@@ -1923,6 +2157,8 @@
     const practiceReader = document.querySelector(".practice-reader");
     const foundationLesson = document.querySelector(".foundation-lesson");
     const foundationHeading = document.querySelector("#foundation-heading");
+    const pranayamaLesson = document.querySelector(".pranayama");
+    const pranayamaHeading = document.querySelector("#pranayama-heading");
     const practiceCards = [...document.querySelectorAll(".practice-card")];
     const practiceButtons = [...document.querySelectorAll(".practice-select")];
     const readerThumb = document.querySelector(".reader-thumb");
@@ -1933,8 +2169,8 @@
     const readerContentTitle = document.querySelector(".reader-content-title");
     const readerDescription = document.querySelector(".reader-description");
     const readerDetail = document.querySelector(".reader-detail");
-    const previousPractice = document.querySelector(".reader-nav-button.previous");
-    const nextPractice = document.querySelector(".reader-nav-button.next");
+    const previousPractice = [...document.querySelectorAll(".reader-nav-button.previous")];
+    const nextPractice = [...document.querySelectorAll(".reader-nav-button.next")];
     const closeReader = document.querySelector(".reader-close");
     const definitionTabs = [...document.querySelectorAll(".definition-tab")];
     const definitionPanel = document.querySelector(".definition-panel");
@@ -2005,6 +2241,7 @@
       const image = card.querySelector(".practice-select img");
       const description = card.querySelector(".practice-text p").textContent;
       const isFoundation = index === 0;
+      const isPranayama = index === 1;
 
       readerThumb.src = image.src;
       readerThumb.classList.remove("is-changing");
@@ -2016,17 +2253,20 @@
       readerContentTitle.textContent = title;
       readerDescription.textContent = description;
       readerDetail.textContent = card.dataset.detail;
-      readerContent.hidden = isFoundation;
+      readerContent.hidden = isFoundation || isPranayama;
       foundationLesson.hidden = !isFoundation;
-      previousPractice.disabled = index === 0;
-      const nextButton = foundationLesson.querySelector(".reader-nav-button.next");
-      nextPractice.textContent = index === practiceCards.length - 1 ? "Finish →" : "Next topic →";
-      nextButton.textContent = index === practiceCards.length - 1 ? "Finish →" : "Next topic →";
+      pranayamaLesson.hidden = !isPranayama;
+      previousPractice.forEach((button) => {
+        button.disabled = index === 0;
+      });
+      nextPractice.forEach((button) => {
+        button.textContent = index === practiceCards.length - 1 ? "Finish →" : "Next topic →";
+      });
       practiceButtons.forEach((button, buttonIndex) => {
         button.setAttribute("aria-expanded", String(buttonIndex === index));
       });
 
-      if (!isFoundation) {
+      if (!isFoundation && !isPranayama) {
         readerContent.classList.remove("is-changing");
         void readerContent.offsetWidth;
         readerContent.classList.add("is-changing");
@@ -2034,7 +2274,8 @@
 
       if (!practiceReader.hidden) {
         practiceReader.scrollTo({ top: 0, behavior: "smooth" });
-        (isFoundation ? foundationHeading : readerContentTitle).focus({ preventScroll: true });
+        const heading = isFoundation ? foundationHeading : isPranayama ? pranayamaHeading : readerContentTitle;
+        heading.focus({ preventScroll: true });
       }
     }
 
@@ -2043,7 +2284,8 @@
       practiceGrid.hidden = true;
       practiceReader.hidden = false;
       practiceReader.scrollIntoView({ behavior: "smooth", block: "start" });
-      (index === 0 ? foundationHeading : readerContentTitle).focus({ preventScroll: true });
+      const heading = index === 0 ? foundationHeading : index === 1 ? pranayamaHeading : readerContentTitle;
+      heading.focus({ preventScroll: true });
     }
 
     function closePractice() {
@@ -2057,25 +2299,25 @@
       button.addEventListener("click", () => openPractice(index));
     });
 
-    previousPractice.addEventListener("click", () => {
-      if (activePracticeIndex > 0) {
-        showPractice(activePracticeIndex - 1);
-      }
+    previousPractice.forEach((button) => {
+      button.addEventListener("click", () => {
+        if (activePracticeIndex > 0) {
+          showPractice(activePracticeIndex - 1);
+        }
+      });
     });
 
-    nextPractice.addEventListener("click", () => {
-      if (activePracticeIndex < practiceCards.length - 1) {
-        showPractice(activePracticeIndex + 1);
-      } else {
-        closePractice();
-      }
+    nextPractice.forEach((button) => {
+      button.addEventListener("click", () => {
+        if (activePracticeIndex < practiceCards.length - 1) {
+          showPractice(activePracticeIndex + 1);
+        } else {
+          closePractice();
+        }
+      });
     });
 
     closeReader.addEventListener("click", closePractice);
-
-    foundationLesson.querySelector(".reader-nav-button.next").addEventListener("click", () => {
-      showPractice(activePracticeIndex + 1);
-    });
 
     if ("IntersectionObserver" in window) {
       const practicesObserver = new IntersectionObserver(([entry]) => {
