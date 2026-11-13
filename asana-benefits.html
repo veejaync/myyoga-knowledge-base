@@ -45,7 +45,7 @@
       <a href="#lateral-bends">11 <span>Lateral bends</span></a>
     </nav>
 
-    <p class="asana-photo-help">Pose photos are grouped in <code>images/asanas/</code> by category. Save each photo in the matching folder and add its path to the <code>posePhotos</code> map near the end of this page. Unmapped poses keep their illustrations.</p>
+    <p class="asana-photo-help">Every pose image is in <code>images/asanas/</code>, grouped by category. Replace a JPG with your own image using the same filename to update that pose.</p>
 
     <section class="asana-grid" aria-label="Potential benefits by asana category">
       <article class="asana-card" id="balancing">
@@ -287,7 +287,8 @@
       const photo = figure.querySelector(".pose-photo");
       const illustration = figure.querySelector(".pose-art");
       const status = figure.querySelector(".pose-image-status");
-      const photoPath = posePhotos[pose.name];
+      const filename = `${pose.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}.jpg`;
+      const photoPath = posePhotos[pose.name] || `images/asanas/${category}/${filename}`;
 
       if (photoPath) {
         photo.addEventListener("load", () => {

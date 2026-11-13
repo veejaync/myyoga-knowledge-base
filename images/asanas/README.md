@@ -1,6 +1,6 @@
 # Asana photo folders
 
-Put each JPG in the folder for its category. Use the pose filename shown below:
+Each pose currently has a JPG illustration in the folder for its category. Replace a JPG with your own photo using the **same filename** to update the page—no code changes are required.
 
 | Category folder | Pose image filenames |
 |---|---|
@@ -16,15 +16,6 @@ Put each JPG in the folder for its category. Use the pose filename shown below:
 | `twists/` | `seated-twist.jpg`, `supine-twist.jpg`, `revolved-chair.jpg` |
 | `lateral-bends/` | `gate-pose.jpg`, `extended-side-angle.jpg`, `seated-side-bend.jpg` |
 
-Tree Pose is already connected to `balancing/tree-pose.jpg`. Replace that file with another image using the same filename to update the card; no code change is needed.
+For example, replace `balancing/dancer-pose.jpg` with your own Dancer Pose photo, or replace `balancing/eagle-pose.jpg` with your Eagle Pose photo. Keep the existing filename and `.jpg` extension. Tree Pose already uses your supplied photo at `balancing/tree-pose.jpg`.
 
-For another pose, add its name and relative path to the `posePhotos` object in `asana-benefits.html`, for example:
-
-```js
-const posePhotos = {
-  "Tree Pose": "images/asanas/balancing/tree-pose.jpg",
-  "Dancer Pose": "images/asanas/balancing/dancer-pose.jpg"
-};
-```
-
-Poses without a photo entry continue to show the built-in illustration.
+The page automatically matches each pose name to its filename in the category folder. If an image is missing or cannot load, the built-in illustration is shown instead.
