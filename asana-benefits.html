@@ -266,10 +266,11 @@
     };
 
     const posePhotos = {
-      "Tree Pose": "images/asanas/balancing/tree-pose.jpg"
+      "Tree Pose": "images/asanas/balancing/tree-pose.jpg",
+      "Dancer Pose": "images/asanas/balancing/dancer-pose.jpeg"
     };
 
-    function createPoseCard(pose) {
+    function createPoseCard(pose, category) {
       const [headX, headY] = pose.head;
       const figure = document.createElement("figure");
       figure.className = "pose-card";
@@ -312,7 +313,7 @@
       const category = card.id;
       const poses = poseGroups[category];
 
-      poses.forEach((pose) => gallery.append(createPoseCard(pose)));
+      poses.forEach((pose) => gallery.append(createPoseCard(pose, category)));
       gallery.setAttribute("aria-label", `${button.textContent.trim()} pose examples`);
 
       button.addEventListener("click", () => {
