@@ -45,7 +45,7 @@
       <a href="#lateral-bends">11 <span>Lateral bends</span></a>
     </nav>
 
-    <p class="asana-photo-help">Every pose image is in <code>images/asanas/</code>, grouped by category. Replace a JPG with your own image using the same filename to update that pose.</p>
+    <p class="asana-photo-help">Every pose image is in <code>images/asanas/</code>, grouped by category. Use the same filename stem with a <code>.jpg</code> or <code>.png</code> extension; JPG is tried first when both are present.</p>
 
     <section class="asana-grid" aria-label="Potential benefits by asana category">
       <article class="asana-card" id="balancing">
@@ -266,8 +266,8 @@
     };
 
     const posePhotos = {
-      "Tree Pose": "images/asanas/balancing/tree-pose.jpg",
-      "Dancer Pose": "images/asanas/balancing/dancer-pose.jpg"
+      "Tree Pose": "images/asanas/balancing/tree-pose",
+      "Dancer Pose": "images/asanas/balancing/dancer-pose"
     };
 
     function createPoseCard(pose, category) {
@@ -288,21 +288,26 @@
       const photo = figure.querySelector(".pose-photo");
       const illustration = figure.querySelector(".pose-art");
       const status = figure.querySelector(".pose-image-status");
-      const filename = `${pose.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}.jpg`;
-      const photoPath = posePhotos[pose.name] || `images/asanas/${category}/${filename}`;
+      const filename = pose.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+      const photoBase = posePhotos[pose.name] || `images/asanas/${category}/${filename}`;
+      let format = "jpg";
 
-      if (photoPath) {
-        photo.addEventListener("load", () => {
-          photo.hidden = false;
-          illustration.hidden = true;
-          figure.classList.add("has-photo");
-        }, { once: true });
-        photo.addEventListener("error", () => {
-          status.textContent = `Could not load ${photoPath}; showing the illustration instead.`;
-          status.hidden = false;
-        }, { once: true });
-        photo.src = photoPath;
-      }
+      photo.addEventListener("load", () => {
+        photo.hidden = false;
+        illustration.hidden = true;
+        figure.classList.add("has-photo");
+      }, { once: true });
+      photo.addEventListener("error", () => {
+        if (format === "jpg") {
+          format = "png";
+          photo.src = `${photoBase}.png`;
+          return;
+        }
+
+        status.textContent = `Could not load ${photoBase}.jpg or ${photoBase}.png; showing the illustration instead.`;
+        status.hidden = false;
+      });
+      photo.src = `${photoBase}.${format}`;
 
       return figure;
     }

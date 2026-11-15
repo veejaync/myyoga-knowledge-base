@@ -1,21 +1,21 @@
 # Asana photo folders
 
-Each pose currently has a JPG illustration in the folder for its category. Replace a JPG with your own photo using the **same filename** to update the page—no code changes are required.
+Each pose has an image in the folder for its category. Use the same filename stem with either `.jpg` or `.png` (for example, `tree-pose.jpg` or `tree-pose.png`). The gallery tries JPG first and PNG second; if both exist, JPG is used. To use a PNG instead of an existing JPG, remove or rename that JPG.
 
-| Category folder | Pose image filenames |
+| Category folder | Pose filename stems |
 |---|---|
-| `balancing/` | `tree-pose.jpg`, `dancer-pose.jpg`, `eagle-pose.jpg` |
-| `inversions/` | `downward-facing-dog.jpg`, `legs-up-the-wall.jpg`, `shoulderstand.jpg` |
-| `core/` | `plank-pose.jpg`, `boat-pose.jpg`, `side-plank.jpg` |
-| `prone/` | `cobra-pose.jpg`, `locust-pose.jpg`, `sphinx-pose.jpg` |
-| `standing/` | `mountain-pose.jpg`, `warrior-ii.jpg`, `triangle-pose.jpg` |
-| `backbends/` | `bridge-pose.jpg`, `camel-pose.jpg`, `wheel-pose.jpg` |
-| `forward-bends/` | `standing-forward-fold.jpg`, `seated-forward-fold.jpg`, `wide-legged-forward-fold.jpg` |
-| `hip-openers/` | `butterfly-pose.jpg`, `pigeon-pose.jpg`, `low-lunge.jpg` |
-| `seated/` | `easy-pose.jpg`, `staff-pose.jpg`, `hero-pose.jpg` |
-| `twists/` | `seated-twist.jpg`, `supine-twist.jpg`, `revolved-chair.jpg` |
-| `lateral-bends/` | `gate-pose.jpg`, `extended-side-angle.jpg`, `seated-side-bend.jpg` |
+| `balancing/` | `tree-pose`, `dancer-pose`, `eagle-pose` |
+| `inversions/` | `downward-facing-dog`, `legs-up-the-wall`, `shoulderstand` |
+| `core/` | `plank-pose`, `boat-pose`, `side-plank` |
+| `prone/` | `cobra-pose`, `locust-pose`, `sphinx-pose` |
+| `standing/` | `mountain-pose`, `warrior-ii`, `triangle-pose` |
+| `backbends/` | `bridge-pose`, `camel-pose`, `wheel-pose` |
+| `forward-bends/` | `standing-forward-fold`, `seated-forward-fold`, `wide-legged-forward-fold` |
+| `hip-openers/` | `butterfly-pose`, `pigeon-pose`, `low-lunge` |
+| `seated/` | `easy-pose`, `staff-pose`, `hero-pose` |
+| `twists/` | `seated-twist`, `supine-twist`, `revolved-chair` |
+| `lateral-bends/` | `gate-pose`, `extended-side-angle`, `seated-side-bend` |
 
-For example, replace `balancing/dancer-pose.jpg` with your own Dancer Pose photo, or replace `balancing/eagle-pose.jpg` with your Eagle Pose photo. Keep the existing filename and `.jpg` extension. Tree Pose already uses your supplied photo at `balancing/tree-pose.jpg`.
+For example, save your Dancer Pose photo as `balancing/dancer-pose.jpg` or `balancing/dancer-pose.png`, or save your Eagle Pose photo as `balancing/eagle-pose.png`. Keep the filename stem shown above.
 
 The page automatically matches each pose name to its filename in the category folder. If an image is missing or cannot load, the built-in illustration is shown instead.
