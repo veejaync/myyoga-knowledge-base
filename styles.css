@@ -2730,6 +2730,23 @@
       font-size: .95em;
     }
 
+    .asana-data-status {
+      max-width: 760px;
+      margin: 0 auto 20px;
+      padding: 12px 16px;
+      border: 1px solid rgba(164, 83, 60, .28);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, .72);
+      color: var(--muted);
+      font-size: .88rem;
+      line-height: 1.65;
+      text-align: center;
+    }
+
+    .asana-data-status[hidden] {
+      display: none;
+    }
+
     .asana-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
